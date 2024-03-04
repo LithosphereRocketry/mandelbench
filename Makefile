@@ -1,17 +1,21 @@
+DIFFICULTIES = 8 12
+
 .DEFAULT: bench
 .PHONY: bench clean view
 
+BINS = $(patsubst %,mandel%,$(DIFFICULTIES))
+
 all: bench view
 
-bench: mandel8
+bench: $(BINS)
 
 view: mandelview
 
 mandelview: mandelview.c
 	gcc -o mandelview mandelview.c -lSDL2
 
-mandel8: mandel8.c
-	gcc -o mandel8 mandel8.c -O3
+$(BINS): mandel%: mandelbench.c
+	gcc -o $@ mandelbench.c -O3 -DDIFFICULTY=$*
 
 clean: 
-	rm -rf mandelview mandel8
+	rm -rf mandelview $(DIFFICULTIES)
