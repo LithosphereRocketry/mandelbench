@@ -18,4 +18,4 @@ $(BINS): mandel%: mandelbench.c
 	gcc -o $@ mandelbench.c -O3 -DDIFFICULTY=$*
 
 clean: 
-	rm -rf mandelview $(DIFFICULTIES)
+	rm -rf mandelview $(BINS)
