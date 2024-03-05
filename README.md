@@ -46,8 +46,8 @@ placed on how the set is calculated.
 * The data may not be precomputed and loaded from external storage.
 * The code may not take advantage of properties such as axis-symmetry; each
 pixel must be computed individually.
-* Escaping results may be discarded once they exceed -2 <= real <= (2 - LSB)
-or -2 <= imag <= (2 - LSB).
+* Escaping results may be discarded once they exceed -2 <= real <= 2 or -2 <=
+imag <= 2.
 
 ## Reference Implementation & MandelView
 
